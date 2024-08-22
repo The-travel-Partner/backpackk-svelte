@@ -1,4 +1,9 @@
 {
 	"/": [],
-	"/login": []
+	"/itinerary": [],
+	"/login": [],
+	"/parameters/cityname": [],
+	"/parameters/dates": [],
+	"/parameters/types": [],
+	"/signup": []
 }
