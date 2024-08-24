@@ -61,6 +61,14 @@ async function handlelogin(event){
 function tosignup(){
   navigate('/signup')
 }
+
+
+function googleSignIn(){
+    window.location.href="http://127.0.0.1:8000/google"
+  }
+  function handleforgot(){
+    navigate('/forgotpassword')
+  }
     </script>
 
 
@@ -69,7 +77,7 @@ function tosignup(){
       <div class = "flex-col w-full items-center justify-center h-svh ">
         <div class="flex flex-col items-center justify-center w-full h-full ">
           
-          <form class="flex flex-col items-center justify-center w-full sm:w-full md:w-full  lg:w-8/12 xl:w-6/12 extra:w-6/12 h-4/6 sm:h-3/5 md:h-3/5 lg:h-3/5   bg-[#2C3036] rounded-xl"
+          <form class="flex flex-col items-center justify-center w-full pt-4 pb-4 sm:w-full md:w-full  lg:w-8/12 xl:w-6/12 extra:w-6/12 h-max   bg-[#2C3036] rounded-xl"
           >
             <h1 class="text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl text-[#FF830F]">Welcome to Backpackk</h1>
             <p class = "text-sm sm:text-sm md:text-base lg:text-lg  text-white"> Sign in to start creating your itineraries!</p>
@@ -77,10 +85,11 @@ function tosignup(){
 
             <Input class="w-3/4 h-10 mt-5 p-2 bg-[#2C3036] border-gray-200 text-white" type="password"  bind:value={password} placeholder="Password"  />
             <div class="flex w-3/4 justify-end items-end">
-              <button class="text-sm sm:text-sm md:text-base lg:text-lg  text-[#FF830F]"> Forgot your Password? </button>
+              <button class="text-sm sm:text-sm md:text-base lg:text-lg  text-[#FF830F]"on:click={handleforgot}> Forgot your Password? </button>
               </div>
-           
-            <button class="w-1/2 h-10 mt-5 p-2 rounded-xl text-white bg-[#FF830F]"
+              <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-8 p-2 rounded-xl text-xs: sm:text-xs md:text-base text-[#FF830F] bg-transparent outline outline-[#FF830F] hover:text-white hover:bg-[#FF830F] hover:border-transparent hover:scale-105 active:bg-transparent active:scale-95 transition duration-300 ease-in-out"
+              on:click={googleSignIn}>Log in with google</button>
+            <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-5 p-2 rounded-xl text-white bg-[#FF830F] hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out"
             on:click={handlelogin}>Login</button>
             <div class="flex mt-7 w-3/4 items-center justify-center">
               <p class="text-sm sm:text-sm md:text-base lg:text-lg  text-white">Don't have an account? </p>

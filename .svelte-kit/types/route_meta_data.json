@@ -1,9 +1,17 @@
 {
 	"/": [],
+	"/about": [],
+	"/contactus": [],
+	"/forgotpassword": [],
+	"/intermediate": [],
 	"/itinerary": [],
+	"/itinerary/intermediate": [],
 	"/login": [],
 	"/parameters/cityname": [],
 	"/parameters/dates": [],
 	"/parameters/types": [],
+	"/profile": [],
+	"/report": [],
+	"/resetpassword": [],
 	"/signup": []
 }

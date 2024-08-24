@@ -52,7 +52,7 @@
       } else {
         console.error('Error:', response.statusText);
         showPopup = true;
-        successMessage = await response.json();
+        successMessage = "Error";
         setTimeout(() => {
           showPopup = false;
           
@@ -66,6 +66,10 @@
 
   function checkPasswords() {
     passwordsMatch = formData.password === confpass;
+  }
+
+  function googleSignIn(){
+    window.location.href="http://127.0.0.1:8000/google"
   }
 
 </script>
@@ -89,12 +93,13 @@
               <Input  type="password"  bind:value={confpass} on:input={checkPasswords} placeholder="Retype Password"  class={` text-white w-3/4 h-10 mt-5 p-2 bg-[#2C3036] focus-within:ring-0 border-gray-200 ${passwordsMatch && confpass ? 'border-green-500 focus:border-green-500' : !passwordsMatch && confpass ? 'border-red-500 focus:border-red-500' : 'border-gray-300'}`}/>
               
               
-              <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-8 p-2 rounded-xl text-xs: sm:text-xs md:text-base text-[#FF830F] bg-transparent outline outline-[#FF830F]">Sign up with google</button>
-              <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-5 p-2 rounded-xl text-white bg-[#FF830F]" on:click={handlesubmit}>Sign Up</button>
+              <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-8 p-2 rounded-xl text-xs: sm:text-xs md:text-base text-[#FF830F] bg-transparent outline outline-[#FF830F] hover:text-white hover:bg-[#FF830F] hover:scale-105 active:bg-transparent active:scale-95 transition duration-300 ease-in-out"
+              on:click={googleSignIn}>Sign up with google</button>
+              <button class="w-3/4 sm:w-3/4 md:w-1/2 h-10 mt-5 p-2 rounded-xl text-white bg-[#FF830F] hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out" on:click={handlesubmit}>Sign Up</button>
               
               <div class="flex mt-7 w-3/4 items-center justify-center">
                 <p class="text-sm sm:text-sm md:text-base lg:text-lg  text-white">Already have an account? </p>
-                <button class="text-sm sm:text-sm md:text-base lg:text-lg  text-[#FF830F]"
+                <button class="text-sm sm:text-sm md:text-base lg:text-lg  text-[#FF830F] "
                 on:click={()=>tologin()}> 
                   
                     Log In!</button>

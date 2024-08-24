@@ -5,10 +5,11 @@ import { goto } from '$app/navigation';
 import { dataStore, updateText, addToList, removeFromList, updateNumber, resetStore } from '../../../stores/param';
 
 
-function getToken() {
+
+    onMount(()=>{
+        function getToken() {
     return localStorage.getItem('authToken');
 }
-    onMount(()=>{
   const token = getToken();
         
         if (!token) {
@@ -184,11 +185,11 @@ function handlenext(){
                 <!-- Additional buttons container -->
                 <div id="night-life-extra-buttons" class="hidden w-full flex flex-wrap gap-x-3 gap-y-6 transition-all duration-300">
                     <button class="h-8 w-full sm:w-1/3 md:w-1/4 pr-4 pl-4 text-sm sm:text-base bg-transparent border-2 rounded-2xl hover:border-0 text-white hover:bg-[#FF830F] hover:scale-105 hover:text-black active:bg-gray-200 active:scale-95 transition duration-300 ease-in-out"
-                    on:click={() => togglePlaceSelection(this, 'Bars')}>
+                    on:click={() => togglePlaceSelection(this, 'bar')}>
                         Bars
                     </button>
                     <button class="h-8 w-full sm:w-1/3 md:w-1/4 pr-4 pl-4 text-sm sm:text-base bg-transparent border-2 rounded-2xl text-white hover:border-0 hover:bg-[#FF830F] hover:scale-105 hover:text-black active:bg-gray-200 active:scale-95 transition duration-300 ease-in-out"
-                    on:click={() => togglePlaceSelection(this, 'Night Clubs')}>
+                    on:click={() => togglePlaceSelection(this, 'night_club')}>
                         Clubs
                     </button>
                 </div>

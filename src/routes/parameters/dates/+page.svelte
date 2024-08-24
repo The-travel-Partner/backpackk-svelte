@@ -5,12 +5,12 @@
 import { goto } from '$app/navigation';
 	import { dataStore, updateNumber, updateStart, updateEnd } from "../../../stores/param";
 
-    function getToken() {
-    return localStorage.getItem('authToken');
-}
+  
     onMount(()=>{
 
-
+      function getToken() {
+    return localStorage.getItem('authToken');
+}
 
 
   const token = getToken();
