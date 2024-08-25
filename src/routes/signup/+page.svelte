@@ -29,7 +29,7 @@
       if (formData.password === confpass) {
         console.log(JSON.stringify(formData))
         try {
-      const response = await fetch('http://127.0.0.1:8000/register', {
+      const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@
   }
 
   function googleSignIn(){
-    window.location.href="http://127.0.0.1:8000/google"
+    window.location.href="https://backpackkfast-fcvonqkgya-el.a.run.app/google"
   }
 
 </script>

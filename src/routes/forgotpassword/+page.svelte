@@ -16,7 +16,7 @@ async function handlereset(){
     email:username
 }
 
-    const response = await fetch('http://127.0.0.1:8000/forgot-password',{
+    const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/forgot-password',{
     method:'POST',
     headers: {
         'Content-Type': 'application/json',

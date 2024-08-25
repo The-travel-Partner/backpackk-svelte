@@ -24,10 +24,12 @@
     const daysInMonth = getDaysInMonth(month, year);
 
     for (let i = 1; i <= daysInMonth; i++) {
+      const date = new Date(year, month, i);
       days.push({
         day: i,
         weekDay: getDayOfWeek(i),
-        date: new Date(year, month, i),
+        date: date,
+        isDisabled: date < currentDate, // Check if date is before today
       });
     }
   };
@@ -58,7 +60,9 @@
     generateCalendar();
   };
 
-  const handleDayClick = (day) => {
+  const handleDayClick = (day, isDisabled) => {
+    if (isDisabled) return; // Prevent action on disabled dates
+
     const clickedDate = new Date(year, month, day);
     if (!isSelectingRange) {
       selectedStart = clickedDate;
@@ -106,6 +110,7 @@
   };
 </script>
 
+
 <style>
   /* Hover effect for desktop only */
   @media (hover: hover) {
@@ -149,13 +154,14 @@
     <div class="text-center font-bold">F</div>
     <div class="text-center font-bold">S</div>
 
-    {#each days as { day, weekDay }}
+    {#each days as { day, weekDay, isDisabled }}
       <div
         class="flex justify-center items-center w-8 h-8 rounded-full text-white cursor-pointer hover-effect transition-colors duration-150 ease-in-out"
-        on:click={() => handleDayClick(day)}
+        on:click={() => handleDayClick(day, isDisabled)}
         class:bg-orange-600={isStartOrEnd(day)}
         class:bg-orange-400={isSelectedRange(day) && !isStartOrEnd(day)}
-      >
+        class:opacity-50={isDisabled}  
+        class:cursor-not-allowed={isDisabled} >
         {day}
       </div>
     {/each}

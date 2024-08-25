@@ -19,7 +19,7 @@
       
 
         try {
-      const response = await fetch(`http://127.0.0.1:8000/reportbug?message=${message}`, {
+      const response = await fetch(`https://backpackkfast-fcvonqkgya-el.a.run.app/reportbug?message=${message}`, {
         method: 'GET',
         headers: {
          

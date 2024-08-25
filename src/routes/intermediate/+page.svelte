@@ -28,7 +28,7 @@ function storeName(name){
  async function validateToken(token) {
         formData.temptoken=token
         try {
-            const response = await fetch('http://127.0.0.1:8000/verifytemp', {
+            const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/verifytemp', {
                 method: 'POST',
                 headers:{
                   'Content-Type': 'application/json',

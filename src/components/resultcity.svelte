@@ -12,7 +12,7 @@ import { onMount } from 'svelte';
 let token = getToken();
   onMount(async () => {
     const nam= photoName;  // Replace with the actual Place ID
-    const response = await fetch(`http://127.0.0.1:8000/getphoto/?name=${nam}`,{
+    const response = await fetch(`https://backpackkfast-fcvonqkgya-el.a.run.app/getphoto/?name=${nam}`,{
       method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`, // Set the Authorization header

@@ -27,7 +27,7 @@ async function handlelogin(event){
   formData.append('password', password);
   console.log(username)
   try{
-    const response = await fetch('http://127.0.0.1:8000/token',{
+    const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/token',{
     method:'POST',
     headers: {
           
@@ -64,7 +64,7 @@ function tosignup(){
 
 
 function googleSignIn(){
-    window.location.href="http://127.0.0.1:8000/google"
+    window.location.href="https://backpackkfast-fcvonqkgya-el.a.run.app/google"
   }
   function handleforgot(){
     navigate('/forgotpassword')

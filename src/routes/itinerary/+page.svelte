@@ -212,7 +212,7 @@ let dates = [];
       try{
         isLoading = true; 
 
-    const response = await fetch('http://127.0.0.1:8000/tripgenerator',{
+    const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/tripgenerator',{
       
       
     method:'POST',
@@ -250,7 +250,7 @@ let dates = [];
 
 async function validateToken(token) {
         try {
-            const response = await fetch('http://127.0.0.1:8000/users/me', {
+            const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/users/me', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

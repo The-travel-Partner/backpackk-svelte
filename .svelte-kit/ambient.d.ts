@@ -39,6 +39,9 @@ declare module '$env/static/private' {
 	export const ChocolateyLastPathUpdate: string;
 	export const ChocolateyToolsLocation: string;
 	export const CHROME_CRASHPAD_PIPE_NAME: string;
+	export const CLOUDSDK_GSUTIL_PYTHON: string;
+	export const CLOUDSDK_PYTHON_ARGS: string;
+	export const CLOUDSDK_ROOT_DIR: string;
 	export const COLOR: string;
 	export const COLORTERM: string;
 	export const CommonProgramFiles: string;
@@ -49,8 +52,10 @@ declare module '$env/static/private' {
 	export const CUDA_PATH_V11_2: string;
 	export const DriverData: string;
 	export const EDITOR: string;
-	export const EFC_11980: string;
+	export const EFC_13316: string;
 	export const EnableLog: string;
+	export const FPS_BROWSER_APP_PROFILE_STRING: string;
+	export const FPS_BROWSER_USER_PROFILE_STRING: string;
 	export const GIT_ASKPASS: string;
 	export const HOME: string;
 	export const HOMEDRIVE: string;
@@ -181,6 +186,9 @@ declare module '$env/dynamic/private' {
 		ChocolateyLastPathUpdate: string;
 		ChocolateyToolsLocation: string;
 		CHROME_CRASHPAD_PIPE_NAME: string;
+		CLOUDSDK_GSUTIL_PYTHON: string;
+		CLOUDSDK_PYTHON_ARGS: string;
+		CLOUDSDK_ROOT_DIR: string;
 		COLOR: string;
 		COLORTERM: string;
 		CommonProgramFiles: string;
@@ -191,8 +199,10 @@ declare module '$env/dynamic/private' {
 		CUDA_PATH_V11_2: string;
 		DriverData: string;
 		EDITOR: string;
-		EFC_11980: string;
+		EFC_13316: string;
 		EnableLog: string;
+		FPS_BROWSER_APP_PROFILE_STRING: string;
+		FPS_BROWSER_USER_PROFILE_STRING: string;
 		GIT_ASKPASS: string;
 		HOME: string;
 		HOMEDRIVE: string;
