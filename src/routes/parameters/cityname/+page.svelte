@@ -75,7 +75,7 @@ async function validateToken(token) {
         
         if (query.length > 0) {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/autocomplete?query=${encodeURIComponent(query)}`);
+                const response = await fetch(`https://backpackk.com/autocomplete?query=${encodeURIComponent(query)}`);
                 if (response.ok) {
                     filteredCities = await response.json();
                     showSuggestions = filteredCities.length > 0;

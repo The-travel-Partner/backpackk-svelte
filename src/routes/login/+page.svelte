@@ -54,7 +54,12 @@ async function handlelogin(event){
 
   }
   catch (error){
-    console.error('Network error:',error);
+    errorMessage = "Network Error";
+    showPopup = true;
+    setTimeout(() => {
+          showPopup = false;
+          
+        }, 5000);
   }
 }
 

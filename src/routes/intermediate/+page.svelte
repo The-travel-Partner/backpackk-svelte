@@ -7,13 +7,14 @@ import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Input } from 'flowbite-sv
 
 import "../../app.css"
 
- function storeToken(token) {
+function storeToken(token) {
     localStorage.setItem('authToken', token);
 }
 function storeName(name){
   localStorage.setItem('name', name);
 }
  onMount(()=>{
+
    
    const urlParams = new URLSearchParams(window.location.search);
    const token = urlParams.get("token");

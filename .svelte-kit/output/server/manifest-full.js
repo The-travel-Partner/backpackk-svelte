@@ -10,7 +10,7 @@ return {
 	assets: new Set(["assets/facebook.png","assets/ins.png","assets/link.png","assets/x.png","budget.png","customize.png","email.png","favicon.png","front.png","gg_profile.png","Group.png","name.png","star.png","test.jpg","time.png","vector.png"]),
 	mimeTypes: {".png":"image/png",".jpg":"image/jpeg"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.CQ0XUKwo.js","app":"_app/immutable/entry/app.DQxxnEGR.js","imports":["_app/immutable/entry/start.CQ0XUKwo.js","_app/immutable/chunks/entry.i7YHZqMb.js","_app/immutable/chunks/scheduler.Bt1ZmQP3.js","_app/immutable/entry/app.DQxxnEGR.js","_app/immutable/chunks/scheduler.Bt1ZmQP3.js","_app/immutable/chunks/index.BTw-nfef.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		client: {"start":"_app/immutable/entry/start.rTtngR9U.js","app":"_app/immutable/entry/app.BYcLdRij.js","imports":["_app/immutable/entry/start.rTtngR9U.js","_app/immutable/chunks/entry.DkCqfv3R.js","_app/immutable/chunks/scheduler.Bt1ZmQP3.js","_app/immutable/entry/app.BYcLdRij.js","_app/immutable/chunks/scheduler.Bt1ZmQP3.js","_app/immutable/chunks/index.BTw-nfef.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
