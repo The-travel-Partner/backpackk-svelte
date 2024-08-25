@@ -8,7 +8,7 @@ import { goto } from '$app/navigation';
 
 
 function createnow(){
-  goto('/signup')
+  goto('/login')
 }
 
 </script>
@@ -25,7 +25,7 @@ function createnow(){
           <p class="text-base sm:text-base md:text-base lg:text-lg xl:text-xl extra:text-3xl text-gray-400 text-center sm:text-center md:text-left lg:text-left xl:text-left mt-7"> Experience the joy of hassle-free travel <br/> planning with our AI itinerary builder.</p>
         </div>
         <div class="flex align-top items-center justify-center sm:flex sm:items-center sm:justify-center md:flex md:items-start md:justify-start">
-          <button class="object-scale-down py-3 px-5 sm:sm:px-5 sm:py-3 md:py-3 md:px-6 extra:py-5 extra:px-12 bg-[#FF830F] text-white rounded-xl mt-6 flex  text-sm sm:text-md md:text-lg extra:text-2xl" on:click={()=>createnow()}> Create Now </button>
+          <button class="object-scale-down py-3 px-5 sm:sm:px-5 sm:py-3 md:py-3 md:px-6 extra:py-5 extra:px-12 bg-[#FF830F] text-white rounded-xl mt-6 flex  text-sm sm:text-md md:text-lg extra:text-2xl  hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out" on:click={()=>createnow()}> Create Now </button>
   
           </div>
         </div>
@@ -38,7 +38,7 @@ function createnow(){
     </Grid.Col>
   <Grid.Col class ="sm={12} md={12} xs={12} lg={12} xl={12}">
     <div class="flex w-full justify-center">
-       <h1 class="mt-32 text-2xl sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl extra:text-5xl font-sans text-white"> Features We Provide </h1>
+       <h1 class="mt-32 text-2xl sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl extra:text-5xl font-sans text-white"> Features </h1>
       </div>
     </Grid.Col>
     <Grid.Col xs={12} sm={6} md={6} lg={4} xl={4}> 
@@ -46,8 +46,8 @@ function createnow(){
           <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
             <div class="mt-6 flex align-middle items-center justify-center w-full">
               <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='budget.png'>
-              <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-                Budget Optimized Itineraries 
+              <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+                Budget Optimized Itineraries (Upcoming)
               </h1>
               </div>
               <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -67,8 +67,8 @@ function createnow(){
          <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
            <div class="mt-6 flex align-middle items-center justify-center w-full">
              <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='time.png'>
-             <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-              Time-Optimized Plans
+             <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+              Time-Optimized Plans (Upcoming)
              </h1>
              </div>
              <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -87,8 +87,8 @@ function createnow(){
        <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
          <div class="mt-6 flex align-middle items-center justify-center w-full">
            <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='customize.png'>
-           <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-            Customizable Travel Plans
+           <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+            Customizable Travel Plans (Upcoming)
            </h1>
            </div>
            <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -107,8 +107,8 @@ function createnow(){
      <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
        <div class="mt-6 flex align-middle items-center justify-center w-full">
          <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='customize.png'>
-         <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-          Reliable Recommendations
+         <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+          Reliable Recommendations 
           </h1>
          </div>
          <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -126,8 +126,8 @@ function createnow(){
    <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
      <div class="mt-6 flex align-middle items-center justify-center w-full">
        <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='customize.png'>
-       <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-        Interactive Map Integration
+       <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+        Interactive Map Integration (Upcoming)
        </h1>
        </div>
        <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -145,8 +145,8 @@ function createnow(){
    <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
      <div class="mt-6 flex align-middle items-center justify-center w-full">
        <img class="ml-3 align-middle w-10 extra:size-1/12 md:w-8 " src='customize.png'>
-       <h1 class="ml-3 sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-        Multi-Destination Support
+       <h1 class="ml-3 sm:text-md md:text-base lg:text-base xl:text-base extra:text-3xl text-white"> 
+        Multi-Destination Support (Upcoming)
         </h1>
        </div>
        <div class="mt-3 w-full h-2/4  flex flex-col  items-center align-middle justify-center ">
@@ -160,51 +160,7 @@ function createnow(){
      
  </div>
 </Grid.Col>
-<Grid.Col class ="sm={12} md={12} xs={12} lg={12} xl={12}">
-  <div class="flex w-full justify-center">
-     <h1 class="mt-32 text-2xl sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl extra:text-5xl font-sans text-white"> What Our Users Say </h1>
-    </div>
-  </Grid.Col>
-  <Grid.Col xs={12} sm={6} md={6} lg={6} xl={6}> 
-    <div class=" mt-5 w-full h-40 md:h-40 lg:h-40 xl:h-36 extra:h-64 flex items-center align-top justify-center ">
-     <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
-       
-         <div class=" w-full h-3/4  flex flex-col  items-center align-middle justify-center ">
-           
-           <h2 class=" md:text-sm lg:text-base xl:text-lg extra:text-3xl ml-4 mr-3 text-[#9CA3AF] text-left">
-            Plan complex trips with ease, whether you're hopping cities or countries, we've got you covered every step of the way.               </h2>
-           </div>
-           <div class=" flex align-top items-start justify-start w-full ">
-            <h1 class="ml-4 sm:text-xs md:text-xs lg:text-sm xl:text-sm extra:text-2xl text-[#FF830F]"> 
-             Multi-Destination Support
-             </h1>
-            </div>
-       
-       
-       </div>  
-       
-   </div>
-  </Grid.Col>
-  <Grid.Col xs={12} sm={6} md={6} lg={6} xl={6}> 
-    <div class=" mt-5 w-full h-40 md:h-40 lg:h-40 xl:h-36 extra:h-64 flex items-center align-top justify-center ">
-     <div class=" m-5 ml-0 mr-0 rounded-lg w-full h-full border flex-col align-middle items-center justify-center border-black bg-[#2C3036]">
-       
-         <div class=" w-full h-3/4  flex flex-col  items-center align-middle justify-center ">
-           
-           <h2 class=" md:text-sm lg:text-base xl:text-lg extra:text-3xl ml-4 mr-3 text-[#9CA3AF] text-left">
-            Plan complex trips with ease, whether you're hopping cities or countries, we've got you covered every step of the way.               </h2>
-           </div>
-           <div class=" flex align-top items-start justify-start w-full ">
-            <h1 class="ml-4 sm:text-xs md:text-xs lg:text-sm xl:text-sm extra:text-2xl text-[#FF830F]"> 
-             Multi-Destination Support
-             </h1>
-            </div>
-       
-       
-       </div>  
-       
-   </div>
-  </Grid.Col>
+
   <Grid.Col class ="sm={12} md={12} xs={12} lg={12} xl={12}">
     <div class="flex w-full justify-center">
        <h1 class="mt-32 text-2xl sm:text-lg md:text-2xl lg:text-2xl xl:text-3xl extra:text-5xl font-sans text-white"> Frequently Asked Questions </h1>
@@ -216,13 +172,13 @@ function createnow(){
          <div class="mt-7 ml-8 mr-8  flex align-middle items-start justify-start w-full ">
          
            <h1 class="text-left sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-            Interactive Map Integration
+            What is Backpack?
            </h1>
            </div>
            <div class=" w-full h-3/4  flex flex-col   items-center align-middle justify-center   ">
              
              <h2 class="  mb-6 ml-8 mr-8 md:text-sm lg:text-base xl:text-lg extra:text-2xl  text-[#9CA3AF] text-left">
-              Visualize your travel plans with interactive maps, explore destinations, and efficiently plan out your adventure.         </div>
+              Backpack is an AI-driven travel planner that automatically generates personalized itineraries based on user preferences, travel dates, and destinations. It’s designed to streamline the travel planning process, saving users time and effort.        </div>
          
          
          </div>  
@@ -235,13 +191,13 @@ function createnow(){
          <div class="mt-7 ml-8 mr-8  flex align-middle items-start justify-start w-full ">
          
            <h1 class="text-left sm:text-md md:text-base lg:text-lg xl:text-xl extra:text-3xl text-white"> 
-            Interactive Map Integration
+            How does Backpack create travel plans?
            </h1>
            </div>
            <div class=" w-full h-3/4  flex flex-col   items-center align-middle justify-center   ">
              
              <h2 class="  mb-6 ml-8 mr-8 md:text-sm lg:text-base xl:text-lg extra:text-2xl  text-[#9CA3AF] text-left">
-              Visualize your travel plans with interactive maps, explore destinations, and efficiently plan out your adventure.         </div>
+              Backpack uses advanced AI algorithms to analyze user inputs, such as preferred destination, interests, and travel dates. It then generates a customized itinerary that includes recommendations for places to explore.        </div>
          
          
          </div>  

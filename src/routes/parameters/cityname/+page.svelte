@@ -4,29 +4,33 @@
     import { navigate } from 'svelte-routing';
 import { goto } from '$app/navigation';
 import { dataStore, updateText, addToList, removeFromList, updateNumber, resetStore } from '../../../stores/param';
+import debounce from 'lodash/debounce';
 
+let name=''
+let tokenn = ''
+onMount(()=>{
     function getToken() {
     return localStorage.getItem('authToken');
 }
 function getname(){
     return localStorage.getItem('name');
 }
-
-onMount(()=>{
+    name=getname();
+    tokenn= getToken();
   const token = getToken();
         
         if (!token) {
             // If no token, redirect to login
             goto('/login');
         } else {
-            // Optionally, validate the token with your backend
+        
             validateToken(token);
         }
 });
 
 async function validateToken(token) {
         try {
-            const response = await fetch('http://127.0.0.1:8000/users/me', {
+            const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/users/me', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -34,7 +38,9 @@ async function validateToken(token) {
             });
 
             if (!response.ok) {
+                goto('/login')
                 throw new Error('Token validation failed');
+                
             }
 
             // If valid, proceed
@@ -56,6 +62,56 @@ async function validateToken(token) {
         goto('/parameters/dates')
         }
     }
+
+
+    let showSuggestions = false;
+    let filteredCities = [];
+    
+
+   
+    let resp;
+    const debounceDelay = 300; 
+    const debouncedFetchCities = async function fetchcities(query) {
+        
+        if (query.length > 0) {
+            try {
+                const response = await fetch(`http://127.0.0.1:8000/autocomplete?query=${encodeURIComponent(query)}`);
+                if (response.ok) {
+                    filteredCities = await response.json();
+                    showSuggestions = filteredCities.length > 0;
+                } else {
+                    console.error('Failed to fetch autocomplete results');
+                }
+            } catch (error) {
+                console.error('Error fetching autocomplete results:', error);
+            }
+        } else {
+            filteredCities = [];
+            showSuggestions = false;
+        }
+    
+    }
+    async function handleInput() {
+        
+        if (cityname.length > 0) {
+            
+            await debouncedFetchCities(cityname);
+        } else {
+            filteredCities = [];
+            showSuggestions = false;
+        }
+    }
+    async function selectCity(city) {
+        cityname = city;
+        console.log(cityname)
+        showSuggestions = false;
+    }
+    function location(place){
+        cityname=place
+        updateText(cityname);
+        goto('/parameters/dates')
+    }
+
     </script>
 
 <body class="w-full flex-col pl-5 pr-5 md:pl-6 md:pr-4 xl:pl-8 xl:pr-12 bg-[#1b1b1b] h-screen mb-24">
@@ -63,28 +119,46 @@ async function validateToken(token) {
    items-center justify-center ">
         <div class="flex flex-col">
             <h1 class="gradient-text ">
-                Hi there, {getname()} <br/>Lets create your dream itinerary
+                Hi there, {name} <br/>Lets create your dream itinerary
                 </h1>
                 <h1 class="text-[#949494]">
                     Popular destinations
                     </h1>
                     
-                <div class="mt-5 grid snap-x gap-x-32 xs:gap-x-32 sm:gap-x-3 md:gap-x-4 grid-cols-4 justify-center items-center overflow-x-auto no-scrollbar">
-                    <Location city="Delhi"handleclick={()=>{}}/>
-                    <Location city="Mumbai" handleclick={()=>{}}/>
-                    <Location city="Jaipur" handleclick={()=>{}} />
-                    <Location city="Varanasi"  handleclick={()=>{}}/>
+                <div class="mt-5 grid snap-x gap-x-32 xs:gap-x-32 sm:gap-x-3 md:gap-x-4 grid-cols-4 justify-center items-center overflow-x-auto no-scrollbar p-2">
+                    <Location city="Delhi"handleclick={()=>location('delhi')}/>
+                    <Location city="Mumbai" handleclick={()=>location('mumbai')}/>
+                    <Location city="Jaipur" handleclick={()=>location('jaipur')} />
+                    <Location city="Varanasi"  handleclick={()=>location('varanasi')}/>
                     </div>
-                    <div class="mt-8 bg-[#2C3036] w-full  rounded-3xl ">
-                      <input class=" bg-transparent border-transparent focus:border-transparent focus:outline-none focus-within:ring-0 w-3/4 md:w-5/6 sm:w-3/4 h-16 rounded-3xl p-4 text-white text-sm"
-                  type ="text" bind:value={cityname}
-                  placeholder="Search for a city" 
-                  />
-                  <button class="w-16 h-10 bg-[#FF830F] text-xs rounded-xl
-                  hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out"on:click={next}>Next</button>
+                    <div class="mt-8 bg-[#2C3036] w-full rounded-3xl relative">
+                        <input
+                            class="bg-transparent border-transparent focus:border-transparent focus:outline-none focus-within:ring-0 w-3/4 md:w-5/6 sm:w-3/4 h-16 rounded-3xl p-4 text-white text-sm"
+                            type="text"
+                            bind:value={cityname}
+                            placeholder="Search for a city"
+                            on:input={handleInput}
+                            on:focus={() => showSuggestions = true}
+                             >
+                            <button class="w-16 h-10 bg-[#FF830F] text-xs rounded-xl
+                            hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out"on:click={next}>Next</button>
+                        {#if showSuggestions && filteredCities.length > 0}
+                            <div class="absolute w-full mt-1 bg-[#2C3036] rounded-3xl z-10">
+                                {#each filteredCities as city}
+                                    <div
+                                        class="p-4 text-white cursor-pointer hover:bg-gray-700 rounded-3xl"
+                                        on:click={()=>selectCity(city)}
+                                    >
+                                        {city}
+                                    </div>
+                                {/each}
+                            </div>
+                        {/if}
+                    </div>
+                 
                       </div>
                 
-            </div>
+            
             
             
             

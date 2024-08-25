@@ -12,7 +12,7 @@ import { onMount } from 'svelte';
 let token = getToken();
   onMount(async () => {
     const nam= photoName;  // Replace with the actual Place ID
-    const response = await fetch(`http://127.0.0.1:8000/getphoto/?name=${nam}`,{
+    const response = await fetch(`https://backpackkfast-fcvonqkgya-el.a.run.app/getphoto/?name=${nam}`,{
       method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`, // Set the Authorization header
@@ -49,7 +49,7 @@ function handleButtonClick(event) {
     <img class="z-10 align-middle w-full extra:size-1/12 md:w-5/5 rounded-xl h-4/5 border-[#979797] border-2 " src={photoUrl}>
     <div class="z-10 flex flex-row w-full justify-start items-center mt-2 gap-x-1">
        <img class="align-center h-4 w-2 extra:size-1/12 md:w-3 sm:w-2" src="vector.png"/>
-       <p class="text-white text-xs">{place}l</p>
+       <p class="text-white text-xs">{place}</p>
        <button class=" ml-2 w-16 h-6  bg-[#FF830F] text-xs rounded-md
        hover:bg-[#FF9900] hover:scale-105 active:bg-[#FF6600] active:scale-95 transition duration-300 ease-in-out relative z-10"
        on:click={handleButtonClick}>Save</button>

@@ -5,12 +5,12 @@
 import { goto } from '$app/navigation';
 	import { dataStore, updateNumber, updateStart, updateEnd } from "../../../stores/param";
 
-    function getToken() {
-    return localStorage.getItem('authToken');
-}
+  
     onMount(()=>{
 
-
+      function getToken() {
+    return localStorage.getItem('authToken');
+}
 
 
   const token = getToken();
@@ -33,7 +33,7 @@ import { goto } from '$app/navigation';
 
 async function validateToken(token) {
         try {
-            const response = await fetch('http://127.0.0.1:8000/users/me', {
+            const response = await fetch('https://backpackkfast-fcvonqkgya-el.a.run.app/users/me', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
